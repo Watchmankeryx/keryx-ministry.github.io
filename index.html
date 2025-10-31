@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KERYX Ministry - Heralding the Final Hour. End-times warning, Gospel proclamation, Watchman calling.">
+    <title>KERYX Ministry | Heralding the Final Hour</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #4B0082 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, #2a0052 0%, #4B0082 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #FFD700;
+            font-style: italic;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero {
+            background: white;
+            border-radius: 10px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            color: #4B0082;
+            margin-bottom: 15px;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 30px;
+            border-top: 2px solid #FFD700;
+            border-bottom: 2px solid #FFD700;
+            padding: 15px 0;
+        }
+        
+        .hero p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, #4B0082 0%, #764ba2 100%);
+            color: white;
+            border: 2px solid #FFD700;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(75,0,130,0.4);
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: #4B0082;
+            border: 2px solid #4B0082;
+        }
+        
+        .cta-secondary:hover {
+            background: #f8f0ff;
+            transform: translateY(-3px);
+        }
+        
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #4B0082;
+        }
+        
+        .section-card h2 {
+            color: #4B0082;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .section-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .section-card a {
+            color: #764ba2;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .section-card a:hover {
+            color: #4B0082;
+            text-decoration: underline;
+        }
+        
+        .video-section {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .video-section h2 {
+            color: #4B0082;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .prayer-section {
+            background: linear-gradient(135deg, #4B0082 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .prayer-section h2 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .prayer-section ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .prayer-section li {
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .prayer-section li:before {
+            content: "✝️ ";
+            margin-right: 10px;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2a0052 0%, #4B0082 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 30px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">ΚΗΡΥΞ</div>
+            <ul class="nav-links">
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="salvation.html">Get Saved</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <h1>🕊️ KERYX MINISTRY</h1>
+            <div class="subtitle">Heralding the Final Hour</div>
+            <div class="tagline">End-Times Warning • Gospel Proclamation • Watchman Calling</div>
+            
+            <p>The technology for the mark of the beast exists RIGHT NOW. Brain-computer implants are operational in 2025. Revelation 13 prophesied this 2,000 years ago.</p>
+            
+            <p><strong>But there is HOPE: Jesus Christ offers salvation and escape through the rapture.</strong></p>
+            
+            <div class="cta-buttons">
+                <a href="salvation.html" class="cta-button cta-primary">🙏 Get Saved Now</a>
+                <a href="#videos" class="cta-button cta-secondary">📺 Watch Videos</a>
+            </div>
+        </div>
+        
+        <div class="prayer-section">
+            <h2>🙏 Prayer Focus</h2>
+            <p style="font-size: 1.2em; margin-bottom: 20px;">Please pray for:</p>
+            <ul>
+                <li>Watchmen to arise globally</li>
+                <li>Boldness in warning the nations</li>
+                <li>Souls to be saved before the rapture</li>
+                <li>The Holy Spirit to guide believers into all truth</li>
+            </ul>
+        </div>
+        
+        <div id="videos" class="video-section">
+            <h2>📹 Featured Videos</h2>
+            <p>Coming soon. Subscribe to our YouTube channel to be notified when new videos are released.</p>
+            <a href="https://youtube.com/@KeroxMinistry" class="cta-button cta-primary" style="margin-top: 20px;">Subscribe on YouTube</a>
+        </div>
+        
+        <div id="resources" class="sections">
+            <div class="section-card">
+                <h2>📖 Study Guide</h2>
+                <p>Comprehensive biblical analysis of the mark of the beast, current technology, and how to be saved.</p>
+                <a href="#">Download Study Guide (PDF)</a>
+            </div>
+            
+            <div class="section-card">
+                <h2>🙏 Get Saved</h2>
+                <p>Understand the Gospel and accept Jesus Christ as your Lord and Savior right now.</p>
+                <a href="salvation.html">Accept Jesus Today</a>
+            </div>
+            
+            <div class="section-card">
+                <h2>📚 Resources</h2>
+                <p>Free biblical resources, infographics, and study materials for end-times understanding.</p>
+                <a href="#">View All Resources</a>
+            </div>
+        </div>
+        
+        <div id="about" class="video-section">
+            <h2>About KERYX Ministry</h2>
+            <p><strong>KERYX</strong> means "Herald" in ancient Greek—one who proclaims urgent truth to the nations.</p>
+            
+            <p>In 2025, we stand at the threshold of the end times. The technology to implement Revelation 13's mark of the beast is operational. The infrastructure for global control is being built. Yet most people—even believers—are completely unaware.</p>
+            
+            <p><strong>KERYX Ministry exists to:</strong></p>
+            <ul style="text-align: left; display: inline-block; margin: 20px 0;">
+                <li>✓ Warn the nations about end-times technology</li>
+                <li>✓ Proclaim the Gospel of Jesus Christ</li>
+                <li>✓ Call believers to be watchmen</li>
+                <li>✓ Point people to salvation before the rapture</li>
+            </ul>
+            
+            <p style="margin-top: 20px;"><strong>We believe:</strong> The rapture could happen at any moment. Every soul matters. Truth must be proclaimed boldly and lovingly. God's Word is infallible and prophetically accurate.</p>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #f8f0ff; border-radius: 8px;">
+                <h3 style="color: #4B0082; margin-bottom: 10px;">📧 Contact Us</h3>
+                <p><strong>Email:</strong> contact@keryx.uk</p>
+                <p><strong>Questions? Testimony?</strong> We personally respond to every message.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p><strong>KERYX MINISTRY</strong></p>
+        <p>Heralding the Final Hour</p>
+        <p style="margin-top: 20px;">📧 contact@keryx.uk</p>
+        <p><a href="salvation.html">Get Saved</a> | <a href="https://youtube.com/@KeroxMinistry">YouTube</a></p>
+        <p style="margin-top: 20px; font-size: 0.9em; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 15px;">
+            "And this gospel of the kingdom will be preached in all the world as a testimony to all the nations, and then the end will come." - Matthew 24:14
+        </p>
+    </footer>
+</body>
+</html>
