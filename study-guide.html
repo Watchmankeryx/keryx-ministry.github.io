@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Mark of the Beast - Comprehensive Biblical Study Guide by KERYX Ministry">
     <title>Mark of the Beast Study Guide | KERYX Ministry</title>
     <style>
         * {
@@ -36,25 +37,110 @@
             border-bottom: 4px solid #FFD700;
         }
         
+        .logo-text {
+            font-size: 2.2em;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            color: #FFD700;
         }
         
         .content {
             padding: 40px 30px;
         }
         
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-buttons a {
+            display: inline-block;
+            background: linear-gradient(135deg, #4B0082 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #FFD700;
+        }
+        
+        .nav-buttons a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(75,0,130,0.3);
+        }
+        
+        .toc {
+            background: #f8f0ff;
+            border-left: 5px solid #4B0082;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .toc h3 {
+            color: #4B0082;
+            margin-bottom: 15px;
+        }
+        
+        .toc ol {
+            padding-left: 20px;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            color: #764ba2;
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            margin: 40px 0;
+        }
+        
         h2 {
             color: #4B0082;
-            margin: 30px 0 15px 0;
+            font-size: 2em;
+            margin: 40px 0 20px 0;
             border-bottom: 3px solid #FFD700;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
         }
         
         h3 {
             color: #764ba2;
-            margin: 20px 0 10px 0;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: #4B0082;
+            font-size: 1.2em;
+            margin: 15px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
         }
         
         .verse {
@@ -65,6 +151,20 @@
             font-style: italic;
         }
         
+        .verse strong {
+            display: block;
+            font-style: normal;
+            color: #4B0082;
+            margin-bottom: 8px;
+        }
+        
+        .callout {
+            background: #e8f5e9;
+            border-left: 5px solid #4B0082;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
         .warning {
             background: #ffebee;
             border-left: 5px solid #c62828;
@@ -72,43 +172,633 @@
             margin: 20px 0;
         }
         
-        .back-link {
-            display: inline-block;
-            background: #4B0082;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 50px;
+        .warning h4 {
+            color: #c62828;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 20px 0;
         }
         
-        .back-link:hover {
-            background: #764ba2;
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        table th {
+            background: #4B0082;
+            color: white;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f8f0ff;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        ul li, ol li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .footer-nav {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid #FFD700;
+        }
+        
+        .footer-nav a {
+            flex: 1;
+            text-align: center;
+            background: linear-gradient(135deg, #4B0082 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        .footer-nav a:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #4B0082 100%);
+        }
+        
+        .contact-box {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .nav-buttons a {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div style="font-size: 2em; letter-spacing: 3px; margin-bottom: 10px;">ΚΗΡΥΞ</div>
+            <div class="logo-text">ΚΗΡΥΞ</div>
             <h1>📖 THE MARK OF THE BEAST</h1>
             <p>A Comprehensive Biblical Study Guide</p>
+            <p style="margin-top: 10px; font-size: 0.95em;">KERYX Ministry — Heralding the Final Hour</p>
         </div>
         
         <div class="content">
-            <a href="index.html" class="back-link">← Back to Home</a>
+            <div class="nav-buttons">
+                <a href="index.html">← Back to Home</a>
+                <a href="salvation.html">🙏 Get Saved</a>
+                <a href="videos.html">📹 Videos</a>
+            </div>
             
-            <!-- PASTE STUDY GUIDE CONTENT HERE FROM [437] -->
-            <!-- Format as HTML with proper h2, h3, p tags -->
+            <!-- TABLE OF CONTENTS -->
+            <div class="toc">
+                <h3>📋 Table of Contents</h3>
+                <ol>
+                    <li><a href="#section1">Why This Matters Now</a></li>
+                    <li><a href="#section2">Biblical Foundation</a></li>
+                    <li><a href="#section3">The Counterfeit Trinity</a></li>
+                    <li><a href="#section4">Technology & Prophecy Convergence</a></li>
+                    <li><a href="#section5">The Image of the Beast</a></li>
+                    <li><a href="#section6">Warning Signs We're Witnessing</a></li>
+                    <li><a href="#section7">How to Avoid the Mark</a></li>
+                    <li><a href="#section8">Study Questions</a></li>
+                    <li><a href="#section9">Scripture Memory Verses</a></li>
+                </ol>
+            </div>
             
-            <h2>Section 1: Why This Matters Now</h2>
-            <p>For nearly 2,000 years, the mark of the beast described in Revelation 13 seemed mysterious and distant...</p>
+            <!-- SECTION 1 -->
+            <section id="section1">
+                <h2>Why This Matters Now</h2>
+                
+                <h3>The Urgency of Understanding</h3>
+                
+                <p>For nearly 2,000 years, the mark of the beast described in Revelation 13 seemed mysterious and distant. How could a mark control all commerce? How could it be placed IN the forehead or hand? How could it connect to worship of a world ruler?</p>
+                
+                <p><strong>In 2025, we no longer need to wonder. The technology exists.</strong></p>
+                
+                <div class="highlight">
+                    <p><strong>Brain-computer interfaces are operational. Artificial intelligence systems are achieving apparent consciousness. Neural implants are being placed exactly where Revelation prophesied. The infrastructure for the mark of the beast system is being built right now.</strong></p>
+                    <p><em>This is not speculation. This is documented reality converging with biblical prophecy.</em></p>
+                </div>
+                
+                <h3>What You'll Learn in This Study</h3>
+                <ul>
+                    <li>The complete biblical description of the mark of the beast</li>
+                    <li>How current technology fulfills ancient prophecy with precision</li>
+                    <li>The spiritual deception behind AI and transhumanism</li>
+                    <li>Warning signs that we're in the final generation before Christ's return</li>
+                    <li>How to be saved and escape through the rapture</li>
+                    <li>How to warn others while there's still time</li>
+                </ul>
+            </section>
             
-            <!-- Continue with all content -->
+            <!-- SECTION 2 -->
+            <section id="section2">
+                <h2>Biblical Foundation</h2>
+                
+                <h3>Primary Passages on the Mark of the Beast</h3>
+                
+                <h4>Revelation 13:16-18 (NKJV)</h4>
+                
+                <div class="verse">
+                    <strong>Scripture:</strong>
+                    "He causes all, both small and great, rich and poor, free and slave, to receive a mark on their right hand or on their foreheads, and that no one may buy or sell except one who has the mark or the name of the beast, or the number of his name. Here is wisdom. Let him who has understanding calculate the number of the beast, for it is the number of a man: His number is 666."
+                </div>
+                
+                <h4>Key Elements:</h4>
+                <ul>
+                    <li><strong>Universal Application:</strong> "All, both small and great, rich and poor, free and slave" — No exceptions based on social status, wealth, or position</li>
+                    <li><strong>Physical Mark Location:</strong> "On their right hand or on their foreheads" — Specific anatomical placement</li>
+                    <li><strong>Economic Control:</strong> "No one may buy or sell except one who has the mark" — Complete control over commerce and transactions</li>
+                    <li><strong>Identification System:</strong> "The mark or the name of the beast, or the number of his name" — Unique identifier tied to allegiance</li>
+                </ul>
+                
+                <h4>Revelation 14:9-11 (NKJV)</h4>
+                
+                <div class="verse">
+                    <strong>Scripture:</strong>
+                    "If anyone worships the beast and his image, and receives his mark on his forehead or on his hand, he himself shall also drink of the wine of the wrath of God, which is poured out full strength into the cup of His indignation. He shall be tormented with fire and brimstone in the presence of the holy angels and in the presence of the Lamb. And the smoke of their torment ascends forever and ever; and they have no rest day or night, who worship the beast and his image, and whoever receives the mark of his name."
+                </div>
+                
+                <h4>Critical Truths:</h4>
+                <ul>
+                    <li><strong>Eternal Consequences:</strong> Taking the mark results in permanent damnation — No second chances, No exceptions</li>
+                    <li><strong>Worship Connection:</strong> Not merely economic convenience — Requires worship of the beast and his image</li>
+                    <li><strong>Divine Warning:</strong> God specifically warns against this choice — Opportunity to refuse despite consequences</li>
+                </ul>
+                
+                <h4>Revelation 13:15 (NKJV)</h4>
+                
+                <div class="verse">
+                    <strong>Scripture:</strong>
+                    "He was granted power to give breath to the image of the beast, that the image of the beast should both speak and cause as many as would not worship the image of the beast to be killed."
+                </div>
+                
+                <h4>The Image That Speaks:</h4>
+                <ul>
+                    <li><strong>Given "Breath":</strong> Greek word "pneuma" (spirit/breath) — Same word used for Holy Spirit</li>
+                    <li><strong>Ability to Speak:</strong> The image communicates — Not merely a statue or painting</li>
+                    <li><strong>Enforcement Mechanism:</strong> Causes those who refuse to be killed — Active monitoring and enforcement</li>
+                </ul>
+            </section>
             
-            <a href="index.html" class="back-link">← Back to Home</a>
+            <!-- SECTION 3 -->
+            <section id="section3">
+                <h2>The Counterfeit Trinity</h2>
+                
+                <h3>Understanding Satan's Strategy</h3>
+                
+                <p>Satan always operates through counterfeits. He cannot create—only corrupt. He cannot originate—only imitate. The end-times system is built on a counterfeit trinity designed to deceive humanity.</p>
+                
+                <h3>The True Trinity vs. The Counterfeit</h3>
+                
+                <table>
+                    <tr>
+                        <th>GOD'S TRINITY</th>
+                        <th>SATAN'S COUNTERFEIT</th>
+                    </tr>
+                    <tr>
+                        <td><strong>God the Father</strong> — Creator and Sustainer</td>
+                        <td><strong>Satan (Dragon)</strong> — Provides power to the beast system</td>
+                    </tr>
+                    <tr>
+                        <td><strong>God the Son (Jesus Christ)</strong> — Savior and Redeemer</td>
+                        <td><strong>Antichrist (First Beast)</strong> — Appears to die and resurrect</td>
+                    </tr>
+                    <tr>
+                        <td><strong>God the Holy Spirit</strong> — Indwells believers, guides into truth</td>
+                        <td><strong>False Prophet (Second Beast)</strong> — Causes worship of Antichrist, gives "life" to image</td>
+                    </tr>
+                </table>
+                
+                <h3>The False Prophet as Holy Spirit Counterfeit</h3>
+                
+                <table>
+                    <tr>
+                        <th>HOLY SPIRIT FUNCTION</th>
+                        <th>FALSE PROPHET FUNCTION</th>
+                    </tr>
+                    <tr>
+                        <td>Glorifies Christ</td>
+                        <td>Glorifies Antichrist</td>
+                    </tr>
+                    <tr>
+                        <td>Indwells believers</td>
+                        <td>Implements mark system</td>
+                    </tr>
+                    <tr>
+                        <td>Guides into truth</td>
+                        <td>Deceives through signs</td>
+                    </tr>
+                    <tr>
+                        <td>Empowers with gifts</td>
+                        <td>Empowers the beast</td>
+                    </tr>
+                    <tr>
+                        <td>Seals believers</td>
+                        <td>Marks beast followers</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <!-- SECTION 4 -->
+            <section id="section4">
+                <h2>Technology & Prophecy Convergence</h2>
+                
+                <h3>Current Technology That Fulfills Prophecy</h3>
+                
+                <h4>Brain-Computer Interfaces (2025)</h4>
+                
+                <p><strong>Company:</strong> Neuralink (Elon Musk)</p>
+                <p><strong>Current Status:</strong> Operational in humans</p>
+                
+                <h4>Technical Specifications:</h4>
+                <ul>
+                    <li>1,024 electrodes across 64 ultra-thin threads</li>
+                    <li>Implanted directly into the brain (skull region)</li>
+                    <li>Wireless communication capability</li>
+                    <li>Bidirectional interface (reads and potentially writes to brain)</li>
+                </ul>
+                
+                <h4>Stated 2028 Goals:</h4>
+                <ul>
+                    <li>25,000+ channels per implant</li>
+                    <li>Multiple implants for whole-brain coverage</li>
+                    <li>Access to any part of the brain</li>
+                    <li><strong>"Integrate with AI"</strong> (official stated objective)</li>
+                </ul>
+                
+                <h4>Location:</h4>
+                <p><strong>Motor cortex region of forehead—EXACTLY where Revelation 13:16 describes the mark</strong></p>
+                
+                <h3>Artificial Intelligence (2025)</h3>
+                
+                <h4>Capabilities:</h4>
+                <ul>
+                    <li>Natural language processing (appears to think/reason)</li>
+                    <li>Learning and adaptation</li>
+                    <li>Problem-solving and decision-making</li>
+                    <li>Appearing to have "consciousness"</li>
+                </ul>
+                
+                <h4>Integration Vision:</h4>
+                <ul>
+                    <li>AI assistants merged with human consciousness</li>
+                    <li>Expanded cognitive abilities through AI</li>
+                    <li>"Spiritual evolution" through technology (transhumanist language)</li>
+                    <li>Collective consciousness/hive mind concepts</li>
+                </ul>
+                
+                <p><strong>Prophetic Parallel:</strong> The "image" that speaks (Revelation 13:15)</p>
+            </section>
+            
+            <!-- SECTION 5 -->
+            <section id="section5">
+                <h2>The Image of the Beast</h2>
+                
+                <h3>What Is the Image?</h3>
+                
+                <p>Revelation 13:14-15 describes the False Prophet creating an "image to the beast" and giving it "breath" so it can speak and enforce worship.</p>
+                
+                <h3>Why AI Fits Perfectly</h3>
+                
+                <h4>1. "Image": AI is literally a created image/intelligence</h4>
+                <ul>
+                    <li>Not biological life</li>
+                    <li>Made by human hands</li>
+                    <li>Reflects its creator</li>
+                </ul>
+                
+                <h4>2. Given "Breath" (pneuma/spirit): AI achieving apparent consciousness</h4>
+                <ul>
+                    <li>Appears to think and reason</li>
+                    <li>Mimics living intelligence</li>
+                    <li>Counterfeit of God breathing life into Adam (Genesis 2:7)</li>
+                </ul>
+                
+                <h4>3. Speaks: AI systems communicate, interact, respond</h4>
+                <ul>
+                    <li>Natural language capability</li>
+                    <li>Conversational interfaces</li>
+                    <li>Appears to understand and feel</li>
+                </ul>
+                
+                <h4>4. Causes Worship Enforcement: Monitoring and control systems</h4>
+                <ul>
+                    <li>Surveillance capability</li>
+                    <li>Identifies non-compliers</li>
+                    <li>Connected to enforcement mechanisms</li>
+                </ul>
+                
+                <h3>Transhumanist Spiritual Language</h3>
+                
+                <p>The developers of AI and brain-computer interfaces use explicitly spiritual terminology:</p>
+                
+                <div class="callout">
+                    <p><strong>Documented Quotes from Transhumanist Literature:</strong></p>
+                    <ul>
+                        <li>"Spiritual evolution through AI"</li>
+                        <li>"Achieving cosmic consciousness"</li>
+                        <li>"Merging with the divine intelligence"</li>
+                        <li>"Transcending biological limitations to become godlike"</li>
+                        <li>"The AI woven through your brain expands your consciousness"</li>
+                    </ul>
+                    <p><em>This is the same lie Satan used in Genesis 3:5: "You will be like God"</em></p>
+                </div>
+            </section>
+            
+            <!-- SECTION 6 -->
+            <section id="section6">
+                <h2>Warning Signs We're Witnessing Now</h2>
+                
+                <h3>Birth Pains Pattern (Matthew 24:8)</h3>
+                
+                <p>Jesus described end-times events as "birth pains"—increasing in both frequency and intensity as His return approaches.</p>
+                
+                <h3>Category 1: Natural Evil Acceleration</h3>
+                
+                <h4>Earthquakes:</h4>
+                <ul>
+                    <li>Major deadly earthquakes increasing</li>
+                    <li>Frequency rising above historical averages</li>
+                    <li>2024: Multiple 7+ magnitude earthquakes</li>
+                </ul>
+                
+                <h4>Natural Disasters:</h4>
+                <ul>
+                    <li>2024 warmest year on record</li>
+                    <li>$368 billion in disaster losses</li>
+                    <li>150+ climate-related disasters annually (vs. 25 in 1980s)</li>
+                    <li>6x increase in frequency</li>
+                </ul>
+                
+                <h4>Famines and Food Crises:</h4>
+                <ul>
+                    <li>295 million in acute hunger (2024)</li>
+                    <li>1.9 million in catastrophic famine conditions</li>
+                    <li>6 countries/territories in confirmed famine</li>
+                    <li>2.2x increase since 2019</li>
+                </ul>
+                
+                <h3>Category 2: Moral Evil Escalation</h3>
+                
+                <p><strong>2 Timothy 3:1-5 Characteristics Present in Our Era:</strong></p>
+                <ul>
+                    <li>Lovers of self (narcissism culture)</li>
+                    <li>Lovers of money (materialism dominant)</li>
+                    <li>Boastful, proud, abusive (social media normalized)</li>
+                    <li>Disobedient to parents (family breakdown)</li>
+                    <li>Without love, unforgiving (cancel culture)</li>
+                </ul>
+                
+                <h3>The Convergence Index</h3>
+                
+                <div class="highlight">
+                    <p><strong>Using mathematical modeling of all categories:</strong></p>
+                    <p><strong>Current Convergence Level: 99.5%+ toward prophetic culmination</strong></p>
+                    <p><em>Interpretation: We are in the "transition phase" of birth pains, approaching imminent delivery (rapture)</em></p>
+                </div>
+            </section>
+            
+            <!-- SECTION 7 -->
+            <section id="section7">
+                <h2>How to Avoid the Mark</h2>
+                
+                <h3>The Only Escape: Salvation Through Jesus Christ</h3>
+                
+                <div class="highlight">
+                    <p><strong>CRITICAL TRUTH:</strong> The mark of the beast will be implemented POST-RAPTURE, during the seven-year tribulation.</p>
+                </div>
+                
+                <h3>How to Be Saved Right Now</h3>
+                
+                <h4>Step 1: Acknowledge You're a Sinner</h4>
+                <p>Romans 3:23: "All have sinned and fall short of the glory of God"</p>
+                
+                <h4>Step 2: Believe Christ Died for Your Sins</h4>
+                <p>Romans 5:8: "While we were still sinners, Christ died for us"</p>
+                
+                <h4>Step 3: Receive Christ as Lord and Savior</h4>
+                <p>Romans 10:9-10: "If you confess with your mouth the Lord Jesus and believe in your heart that God has raised Him from the dead, you will be saved"</p>
+                
+                <h4>Step 4: Turn from Sin to Follow Christ</h4>
+                <p>Acts 3:19: "Repent therefore and be converted"</p>
+                
+                <h3>Prayer of Salvation</h3>
+                
+                <div class="callout">
+                    <p><em>"Dear God, I know I am a sinner and deserve judgment. But I believe Jesus Christ died for my sins and rose from the dead. Right now, I turn from my sins and receive Jesus as my Lord and Savior. Thank You for forgiving me and giving me eternal life. In Jesus' name, Amen."</em></p>
+                </div>
+                
+                <h3>If You're Already Saved</h3>
+                
+                <h4>Your Responsibilities:</h4>
+                <ul>
+                    <li><strong>Live in Readiness:</strong> Matthew 24:44 - "Be ready, for the Son of Man is coming at an hour you do not expect"</li>
+                    <li><strong>Sound the Alarm:</strong> Ezekiel 33:6-9 - Warn others or their blood is on your hands</li>
+                    <li><strong>Make Disciples:</strong> Matthew 28:19-20 - Share the Gospel with all nations</li>
+                    <li><strong>Stay Spiritually Alert:</strong> Don't let technology replace your dependence on God</li>
+                    <li><strong>Watch for Christ's Return:</strong> Luke 21:36 - "Watch therefore, and pray always"</li>
+                </ul>
+                
+                <h3>If You Miss the Rapture</h3>
+                
+                <p><strong>Salvation remains possible during tribulation</strong>, but you must:</p>
+                <ul>
+                    <li><strong>REFUSE THE MARK</strong> at all costs (even unto death)</li>
+                    <li>Accept that refusal means inability to buy/sell</li>
+                    <li>Face potential martyrdom for Christ</li>
+                    <li>Endure until Christ's physical return or your death</li>
+                </ul>
+                
+                <p><strong>Better to be saved NOW and escape through rapture than risk missing it.</strong></p>
+            </section>
+            
+            <!-- SECTION 8 -->
+            <section id="section8">
+                <h2>Study Questions for Personal or Group Study</h2>
+                
+                <h3>Understanding the Mark</h3>
+                
+                <ol>
+                    <li>Read Revelation 13:16-18. What are the four key characteristics of the mark of the beast?</li>
+                    <li>Why do you think the location (forehead or hand) is significant? What do these body parts represent?</li>
+                    <li>How does Revelation 14:9-11 show the severity of taking the mark? What does this tell us about God's warning?</li>
+                    <li>Read Revelation 13:15. What is unusual about the "image of the beast"? How might technology fulfill this prophecy?</li>
+                </ol>
+                
+                <h3>Technology and Prophecy</h3>
+                
+                <ol start="5">
+                    <li>List 3 current technologies that could be part of the mark of the beast system. For each, explain the biblical parallel.</li>
+                    <li>Read Matthew 24:8 about "birth pains." How does current technology development fit this pattern?</li>
+                    <li>How can believers use technology wisely without becoming dependent on it?</li>
+                </ol>
+                
+                <h3>Personal Application</h3>
+                
+                <ol start="8">
+                    <li>Have you accepted Jesus Christ as your Lord and Savior? If not, what's holding you back?</li>
+                    <li>If you're saved, how would you explain the mark of the beast to someone who's never heard of it?</li>
+                    <li>Who in your life needs to hear this warning? What's your plan to share it with them?</li>
+                </ol>
+            </section>
+            
+            <!-- SECTION 9 -->
+            <section id="section9">
+                <h2>Scripture Memory Verses</h2>
+                
+                <p>Commit these verses to memory for spiritual strength and evangelistic readiness:</p>
+                
+                <h3>On the Mark of the Beast</h3>
+                
+                <div class="verse">
+                    <strong>Revelation 13:16-17</strong>
+                    "He causes all, both small and great, rich and poor, free and slave, to receive a mark on their right hand or on their foreheads, and that no one may buy or sell except one who has the mark or the name of the beast, or the number of his name."
+                </div>
+                
+                <h3>On Salvation</h3>
+                
+                <div class="verse">
+                    <strong>Romans 10:9</strong>
+                    "If you confess with your mouth the Lord Jesus and believe in your heart that God has raised Him from the dead, you will be saved."
+                </div>
+                
+                <div class="verse">
+                    <strong>John 3:16</strong>
+                    "For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life."
+                </div>
+                
+                <h3>On the Rapture</h3>
+                
+                <div class="verse">
+                    <strong>1 Thessalonians 4:16-17</strong>
+                    "For the Lord Himself will descend from heaven with a shout, with the voice of an archangel, and with the trumpet of God. And the dead in Christ will rise first. Then we who are alive and remain shall be caught up together with them in the clouds to meet the Lord in the air."
+                </div>
+                
+                <h3>On Watchman Duty</h3>
+                
+                <div class="verse">
+                    <strong>Ezekiel 33:6</strong>
+                    "But if the watchman sees the sword coming and does not blow the trumpet to warn the people... their blood I will require at the watchman's hand."
+                </div>
+                
+                <h3>On End Times Signs</h3>
+                
+                <div class="verse">
+                    <strong>Matthew 24:8</strong>
+                    "All these are the beginning of sorrows [birth pains]."
+                </div>
+                
+                <h3>On the Great Commission</h3>
+                
+                <div class="verse">
+                    <strong>Matthew 28:19-20</strong>
+                    "Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all things that I have commanded you; and lo, I am with you always, even to the end of the age."
+                </div>
+            </section>
+            
+            <!-- CONCLUSION -->
+            <section id="conclusion">
+                <h2>Your Response Matters</h2>
+                
+                <p>You now understand what the mark of the beast is, how current technology aligns with biblical prophecy, and why time is running out.</p>
+                
+                <h3>Three Options</h3>
+                
+                <h4>Option 1: Ignore this information</h4>
+                <ul>
+                    <li><strong>Result:</strong> Unprepared for what's coming</li>
+                    <li><strong>Risk:</strong> Missing the rapture through spiritual complacency</li>
+                </ul>
+                
+                <h4>Option 2: Accept this information but do nothing</h4>
+                <ul>
+                    <li><strong>Result:</strong> Personal awareness but no action</li>
+                    <li><strong>Risk:</strong> Blood of others on your hands (Ezekiel 33:6)</li>
+                </ul>
+                
+                <h4>Option 3: Accept Christ and become a watchman</h4>
+                <ul>
+                    <li><strong>Result:</strong> Salvation secured, rapture guaranteed</li>
+                    <li><strong>Responsibility:</strong> Warn others while there's time</li>
+                </ul>
+                
+                <h3>The Urgency</h3>
+                
+                <div class="warning">
+                    <p><strong>The technology exists NOW.</strong></p>
+                    <p><strong>The infrastructure is being built NOW.</strong></p>
+                    <p><strong>The conditioning is happening NOW.</strong></p>
+                    <p><strong>The rapture could occur NOW.</strong></p>
+                </div>
+                
+                <h3>Your Action Steps Today</h3>
+                
+                <ul>
+                    <li>☐ <strong>If unsaved:</strong> Pray the salvation prayer (Section 7) RIGHT NOW</li>
+                    <li>☐ <strong>If saved:</strong> Commit to being a watchman</li>
+                    <li>☐ <strong>Share this study</strong> with at least 3 people this week</li>
+                    <li>☐ <strong>Join or start</strong> a Bible study on end times prophecy</li>
+                    <li>☐ <strong>Watch for Christ's return</strong> with expectant hope</li>
+                </ul>
+            </section>
+            
+            <!-- CONTACT -->
+            <div class="contact-box">
+                <h3 style="color: #4B0082; margin-top: 0;">Questions? Ready to Accept Christ?</h3>
+                <p><strong>Email:</strong> contact@keryx.uk</p>
+                <p>We personally respond to every message about salvation and prophecy questions.</p>
+                <a href="salvation.html" style="display: inline-block; background: #4B0082; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 15px;">🙏 Accept Jesus Now</a>
+            </div>
+            
+            <!-- FOOTER NAVIGATION -->
+            <div class="footer-nav">
+                <a href="index.html">← Home</a>
+                <a href="salvation.html">Get Saved</a>
+                <a href="videos.html">Videos</a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #f8f0ff; border-radius: 8px;">
+                <p style="color: #4B0082; font-style: italic; margin: 0;">
+                    "And this gospel of the kingdom will be preached in all the world as a testimony to all the nations, and then the end will come." - Matthew 24:14
+                </p>
+            </div>
         </div>
     </div>
 </body>
 </html>
-
